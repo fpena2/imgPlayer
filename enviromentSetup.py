@@ -1,6 +1,16 @@
 import cv2
 import os
 
+"""Setup directories needed"""
+def setupFolders():
+	listOfFolders = ["data","positives","negatives"]
+	for folder in listOfFolders:
+		if not os.path.exists(folder):
+			os.makedirs(folder)
+		else:
+			print("Warning: One of the folders already exists.")
+			exit()
+
 """Generates negative images from a source solder"""
 def getAndResizeImages(path="images", imgNumber=1000):
     count = 0
