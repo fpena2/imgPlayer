@@ -4,12 +4,18 @@ import os
 """Setup directories needed"""
 def setupFolders():
 	listOfFolders = ["data","positives","negatives"]
+	print("The folders data, positives, and negatives will be created in this directory")
 	for folder in listOfFolders:
 		if not os.path.exists(folder):
 			os.makedirs(folder)
 		else:
-			print("Warning: One of the folders already exists.")
-			exit()
+			print("Warning: One or more folders already exist in this directory.")
+			userIn = input("The folder " + '"'+ folder + '"' +" will be overwritten.  Do you want to continue. (y/n)")	
+			if (userIn).lower() in ["y","yes"]:	
+				shutil.rmtree(folder)
+				os.makedirs(folder)
+			else: 
+				exit()
 
 """Generates negative images from a source solder"""
 def getAndResizeImages(path="images", imgNumber=1000):
