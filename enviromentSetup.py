@@ -6,7 +6,7 @@ def getAndResizeImages(path="images", imgNumber=1000):
     count = 0
     for imgFile in os.listdir(path):
         # need to include gray scale
-        img = cv2.imread(os.path.join(path, imgFile))
+        img = cv2.imread(os.path.join(path, imgFile)) #assuming gray scale imgs in source folder
         imgResize = cv2.resize(img, (100, 100))
         if not os.path.exists("negatives"):
             os.mkdir("negatives")
