@@ -35,7 +35,7 @@ class userInterface(tk.Frame):
         file.add_command(label="Open", command=None)
         file.add_command(label="Modify", command=None)
         file.add_command(label="Save", command=None)
-        file.insert_separator(5)
+        file.insert_separator(4)
         file.add_command(label="Exit", command=self.quit)
         menuBar.add_cascade(label="File", menu=file)
 
