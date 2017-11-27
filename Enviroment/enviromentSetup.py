@@ -1,5 +1,6 @@
 import cv2
 import os
+import shutil
 
 """Setup directories needed"""
 def setupFolders():
@@ -18,7 +19,7 @@ def setupFolders():
 				exit()
 
 """Generates negative images from a source solder"""
-def getAndResizeImages(path="images", imgNumber=1000):
+def getAndResizeImages(path="images", imgNumber=1900):
     count = 0
     for imgFile in os.listdir(path):
         # reading images in gray scale
