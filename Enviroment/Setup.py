@@ -13,7 +13,7 @@ def Setup():
 
 	#Parameters 
 	inputImg = "pictureToDetect.png"
-	inputNumb = 1900
+	inputNumb = 1800
 
 	# Sends Commands to create cascade XML file 
 	cascadeSetup.createPositiveSamples(inputImg, str(inputNumb))
