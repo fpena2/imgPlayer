@@ -3,27 +3,24 @@ import enviromentSetup
 import cascadeSetup
 import time
 
-#This is a function for setting up all of the folders needed for the program to work
-def Setup(): 
-	# Sets up folders needed 
-	enviromentSetup.setupFolders()
-	enviromentSetup.getAndResizeImages()
-	enviromentSetup.createNegatives()
-	#time.sleep(2)
 
-	#Parameters 
-	inputImg = "pictureToDetect.png"
-	inputNumb = 1900
-	inputNumbPos = inputNumb - 100
+def Setup():
+    # Sets up folders needed
+    enviromentSetup.setupFolders()
+    enviromentSetup.getAndResizeImages()
+    enviromentSetup.createNegatives()
 
-	# Sends Commands to create cascade XML file 
-	cascadeSetup.createPositiveSamples(inputImg, str(inputNumb))
-	#time.sleep(20)
-	cascadeSetup.createVector(str(inputNumb))
-	#time.sleep(20)
-	cascadeSetup.createCascade(inputNumbPos)
+    # Parameters
+    inputImg = "pictureToDetect.png"
+    inputNumb = 1900
+    inputNumbPos = inputNumb - 100
+
+    # Sends Commands to create cascade XML file
+    cascadeSetup.createPositiveSamples(inputImg, str(inputNumb))
+    cascadeSetup.createVector(str(inputNumb))
+    cascadeSetup.createCascade(inputNumbPos)
+    cascadeSetup.createCascade(inputNumbPos)
+    cascadeSetup.moveFolder()
 
 
 Setup()
-
-
