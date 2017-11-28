@@ -10,7 +10,6 @@ def createVector(inputNumb):
 	CV2VectorCommand = "opencv_createsamples -info positives/info.lst -num " + inputNumb + " -w 20 -h 20 -vec positives.vec"
 	os.system(CV2VectorCommand)
 
-
 def createCascade(inputNumb):
 	# Creates Cascade file needed for object recognition 
 	CV2CascadeCommand = "opencv_traincascade -data data -vec positives.vec -bg negativesMap.txt -numPos " + str(inputNumb) +" -numNeg " + str(inputNumb/2) +" -numStages 10 -w 20 -h 20"
