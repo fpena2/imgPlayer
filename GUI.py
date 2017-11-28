@@ -49,12 +49,14 @@ class userInterface(tk.Frame):
         self.window1.geometry("250x150")
 
         # Private Data
+        #enter in the sensitive data that is going to be censored 
         self.label_find = tk.Label(self.window1,text="Enter private data to secure")
         self.label_find.pack(anchor="center")
         self.privateData = tk.Entry(self.window1, bd=5,width= 25)
         self.privateData.pack(anchor="center")
 
         # File
+        #enter in the name of the file in which the sensitive data is going to censored 
         self.label_find2 = tk.Label(self.window1,text="Enter document name")
         self.label_find2.pack(anchor="center")
         self.fileName = tk.Entry(self.window1, bd=5,width= 25)
@@ -64,7 +66,9 @@ class userInterface(tk.Frame):
         self.enterbutton = tk.Button(self.window1, text = "Enter", command = self.sendData )#button command needs to be added
         self.enterbutton.pack(anchor="center")
 
-
+        
+    #the entered values for the private data and file name are put through the RUN functions
+    #RUN function then feeds into the other modules for this project
     def sendData(self):
         privateDataString = self.privateData.get()
         documentFilename = self.fileName.get()
