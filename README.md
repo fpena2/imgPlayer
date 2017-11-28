@@ -7,6 +7,7 @@ Users are able to input a string or private information that needs to be secured
 
 Requirements 
 + OpenCV and Python3 installed 
++ An image file called "pictureToDetect.png".  This will be the taget image to detect. 
 + A folder called "images" inside the Enviroment folder with over 2000 negative images. 
 + Linux System with Ubuntu Family font installed. (https://design.ubuntu.com/font/)
  
