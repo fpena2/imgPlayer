@@ -3,6 +3,10 @@ import time
 import numpy as np
 from PIL import ImageFont, ImageDraw, Image
 
+#code for analyzing a given files and locating a specific area/region of said file
+#in this case we are making detection code for locating faces from photos and key words from a file 
+#both file and photo are given by the user
+
 
 def privateDataImg( privateString ):
 	font = ImageFont.truetype("/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf", 14, encoding="unic")
