@@ -1,6 +1,7 @@
-# Requires tkinter installed in Python3
+import webbrowser # Open webpages in browser
 import tkinter as tk
 from imgDetection import RUN
+from tkinter import messagebox
 
 
 class userInterface(tk.Frame):
@@ -34,19 +35,32 @@ class userInterface(tk.Frame):
         # Sub-Menu
         file = tk.Menu(menuBar, tearoff=0)
         file.add_command(label="Open", command=self.openWindow)
-        file.add_command(label="Save", command=None)
-        file.insert_separator(3)
+        file.insert_separator(2)
         file.add_command(label="Exit", command=self.quit)
         menuBar.add_cascade(label="File", menu=file)
 
         # Sub-Menu
         help = tk.Menu(self.parent, tearoff=0)
+        help.add_command(label="Github", command=self.openGit)
+        help.add_command(label="Documentation", command=self.openDoc)
+        help.add_command(label="Version", command=self.showVersion)
         menuBar.add_cascade(label="Help", menu=help)
 
+    def openGit(self):
+        webbrowser.open_new("https://github.com/fpena2/imgPlayer")
+
+    def openDoc(self):
+        webbrowser.open_new("https://github.com/fpena2/imgPlayer/blob/master/README.md")
+
+    def showVersion(self):
+        messagebox.showinfo("About","Version 0.1 Alpha - 11/27/2017")
+
+    # Toplevel windows created when the Open option is seleted from the menu
     def openWindow(self):
         self.window1 = tk.Toplevel(self.parent)
         self.window1.title("Private Information")
         self.window1.geometry("250x150")
+        self.window1.resizable(0,0)
 
         # Private Data
         self.label_find = tk.Label(
@@ -67,15 +81,18 @@ class userInterface(tk.Frame):
         self.window1, text="Enter", command=self.sendData)
         self.enterbutton.pack(anchor="center")
 
-
+    # Sends data passed by the user to processing functions
     def sendData(self):
         privateDataString = self.privateData.get()
         documentFilename = self.fileName.get()
         RUN(privateDataString, documentFilename)
 
 
-
 root = tk.Tk()
-root.geometry("400x300")
+root.geometry("442x278")
+img = tk.PhotoImage(file="./resources/logo.png")
+panel = tk.Label(root, image = img)
+panel.pack(side = "bottom", fill = "both", expand = "yes")
+root.resizable(0,0)
 app = userInterface(root)
 root.mainloop()
