@@ -4,26 +4,28 @@ import shutil
 
 """Setup directories needed"""
 def setupFolders():
-	listOfFolders = ["data","positives","negatives"]
-	print("The folders data, positives, and negatives will be created in this directory")
-	for folder in listOfFolders:
-		if not os.path.exists(folder):
-			os.makedirs(folder)
-		else:
-			print("Warning: One or more folders already exist in this directory.")
-			userIn = input("The folder " + '"'+ folder + '"' +" will be overwritten.  Do you want to continue. (y/n)")	
-			if (userIn).lower() in ["y","yes"]:	
-				shutil.rmtree(folder)
-				os.makedirs(folder)
-			else: 
-				exit()
+    listOfFolders = ["data", "positives", "negatives", "images"]
+    print("The folders data, positives, and negatives will be created in this directory")
+    for folder in listOfFolders:
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+        else:
+            print("Warning: One or more folders already exist in this directory.")
+            userIn = input("The folder " + '"' + folder + '"' +
+                           " will be overwritten.  Do you want to continue. (y/n)")
+            if (userIn).lower() in ["y", "yes"]:
+                shutil.rmtree(folder)
+                os.makedirs(folder)
+            else:
+                exit()
+
 
 """Generates negative images from a source solder"""
 def getAndResizeImages(path="images", imgNumber=1900):
     count = 0
     for imgFile in os.listdir(path):
         # reading images in gray scale
-        img = cv2.imread(os.path.join(path, imgFile), 0) 
+        img = cv2.imread(os.path.join(path, imgFile), 0)
         imgResize = cv2.resize(img, (100, 100))
         if not os.path.exists("negatives"):
             os.mkdir("negatives")
@@ -31,6 +33,7 @@ def getAndResizeImages(path="images", imgNumber=1900):
         count += 1
         if count > imgNumber:
             break
+
 
 """Generates a negative images map, which is required by CV2 to generate samples"""
 def createNegatives():
@@ -40,3 +43,7 @@ def createNegatives():
                 toWrite = folder + "/" + img + "\n"
                 with open("negativesMap.txt", 'a') as handle:
                     handle.write(toWrite)
+
+
+def moveFolder():
+    shutil.copy2("./data/cascade.xml", "./generatedCascade.xml")
