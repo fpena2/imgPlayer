@@ -3,7 +3,7 @@ import enviromentSetup
 import cascadeSetup
 import time
 
-
+#This is a function for setting up all of the folders needed for the program to work
 def Setup(): 
 	# Sets up folders needed 
 	enviromentSetup.setupFolders()
