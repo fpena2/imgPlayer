@@ -1,6 +1,6 @@
 # Requires tkinter installed in Python3
 import tkinter as tk
-from tempMatch import RUN
+from imgDetection import RUN
 
 
 class userInterface(tk.Frame):
