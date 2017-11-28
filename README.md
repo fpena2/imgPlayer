@@ -10,7 +10,7 @@ Requirements
 + A folder called "images" inside the Enviroment folder with over 2000 negative images. 
 + Linux System with Ubuntu Family font installed. (https://design.ubuntu.com/font/)
  
-Hugs and kisses to
+Thank you
 + logodust.com for their awesome open source logos
 + pythonprogramming.net for his amazing toturials about OpenCV and Python
 + readthedocs.io for the openCV documentation 
