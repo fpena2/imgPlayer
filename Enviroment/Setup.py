@@ -9,18 +9,21 @@ def Setup():
 	enviromentSetup.setupFolders()
 	enviromentSetup.getAndResizeImages()
 	enviromentSetup.createNegatives()
-	time.sleep(2)
+	#time.sleep(2)
 
 	#Parameters 
 	inputImg = "pictureToDetect.png"
-	inputNumb = 1800
+	inputNumb = 1900
+	inputNumbPos = inputNumb - 100
 
 	# Sends Commands to create cascade XML file 
 	cascadeSetup.createPositiveSamples(inputImg, str(inputNumb))
-	time.sleep(5)
+	#time.sleep(20)
 	cascadeSetup.createVector(str(inputNumb))
-	time.sleep(5)
-	cascadeSetup.createCascade(inputNumb)
+	#time.sleep(20)
+	cascadeSetup.createCascade(inputNumbPos)
 
 
 Setup()
+
+
