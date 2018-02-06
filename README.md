@@ -12,7 +12,7 @@ Users are able to input the private information that needs to be secured. This s
 
 ## Demo
 ![Alt text](resources/screen1.png?raw=true "Welcome Screen")
-
+![Alt text](resources/screen2.png?raw=true "File Processing Screen")
 
 ### Thank you
 + [Logo Dusk](http://logodust.com/) for their awesome open source logos
