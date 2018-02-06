@@ -11,7 +11,7 @@ Users are able to input the private information that needs to be secured. This s
  + [Python3](https://www.python.org/downloads/)
 
 ## Demo
-
+![Alt text](resources/screen1.png?raw=true "Welcome Screen")
 
 
 ### Thank you
