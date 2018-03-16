@@ -11,9 +11,10 @@ Users are able to input the private information that needs to be secured. This s
  + [Python3](https://www.python.org/downloads/)
 
 ## Demo
-![Alt text](resources/settings.png?raw=true "Welcome Screen")
-![Alt text](resources/output.png?raw=true "Final Output")
-
+<p align="center">
+  <img width="700" height="379" src="resources/settings.png">
+  <img width="700" height="676" src="resources/output.png">
+</p>
 
 ### Thank you
 + [Logo Dusk](http://logodust.com/) for their awesome open source logos
