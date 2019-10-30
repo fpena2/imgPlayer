@@ -1,3 +1,5 @@
+#this is the cascade file
+#it allows the program to seek out certain demographics
 import os
 
 
